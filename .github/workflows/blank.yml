@@ -1,0 +1,22 @@
+name: remote ssh commands
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      env:
+        URL: https://github.com/lepekhovandrei/__app
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.NAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        envs: URL
+        script: |
+         cd /www/wwwroot/2kino.fun
+         git init
+         git pull $URL
