@@ -98,6 +98,12 @@
     li
       padding: 5px 22px !important
 @media (max-width: 767px)
+  .pagination
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-gap: 5px
+    & .page-item
+      margin: 0
   .info_list_item
     grid-template-columns: 140px 1fr
     grid-gap: 10px

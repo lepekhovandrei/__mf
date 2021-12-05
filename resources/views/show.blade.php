@@ -1,6 +1,6 @@
 @extends('loyouts.main')
 @section('title')
-  {{ $movieSingle->title }} смотреть онлайн | 2kino  
+  {{ $movieSingle->title }} смотреть онлайн | 2kino
 @endsection
 @section('content')
   <div class="content_2">
@@ -44,12 +44,12 @@
         </div>
       </div>
       <div class="show_movie_poster">
-        <img src="{{ 'https://image.tmdb.org/t/p/w780'. $movieSingle->backdrop_path }}" alt="">
+        <img src="{{ 'https://image.tmdb.org/t/p/w780'. $movieSingle->poster_path }}" alt="">
       </div>
     </div>
 
     <div class="player">
-      <video id="yohoho" data-title="{{ $movieSingle->title }}" controls>
+      <video id="yohoho" data-title="{{ $movieSingle->original_title }}" controls>
       <source src="//yohoho.cc/yo.mp4" type="video/mp4">
       </video>
       <script src="//yohoho.cc/yo.js"></script>

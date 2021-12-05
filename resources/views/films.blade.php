@@ -8,7 +8,7 @@
     <source src="//yohoho.cc/yo.mp4" type="video/mp4">
     </video>
     <script src="//yohoho.cc/yo.js"></script> --}}
-    <div class="heading">Последние добавленые фильмы</div>
+    <div class="heading">Фильмы</div>
     <div class="grid">
       @foreach ($film as $f)
         <a href="{{ route('film.show', $f->id_tmdb_film) }}" class="movie">

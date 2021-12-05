@@ -76,23 +76,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="{{ asset('js/app.js') }}"></script>
   <script>
-      setTimeout(function(){
-        $(document).ready(function(){
-            $("#filter").keyup(function(){
-                var filter = $(this).val(), count = 0;
-                $(".search nav ul li").each(function(){
-                    if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-                        $(this).fadeOut();
-                    } else {
-                        $(this).show();
-                        count++;
-                    }
-                });
-                var numberItems = count;
-                $("#filter-count").text("Number of Filter = "+count);
-            });
-        });
-      }, 5000);
+
 
 
   </script>

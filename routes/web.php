@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'FilmController@index')->name('film.index');
-Route::get('/films', 'FilmController@index')->name('film.index');
+Route::get('/films', 'FilmController@films')->name('film.films');
 Route::get('/films/{film}', 'FilmController@show')->name('film.show');
 
 // Route::get('/test', 'FilmController@show')->name('film.show');

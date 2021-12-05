@@ -22,7 +22,7 @@ class ImportFilmCommand extends Command
 
     public function handle()
     {
-        $page = 22;
+        $page = 28;
         $import = new importFilm();
         $response = $import->client->request('GET', 'movie?api_key=f564ef36ff270a71a2d1f769b72cd1bd&language=ru-RU&sort_by=popularity.desc&include_adult=false&include_video=false&page='.$page.'&with_watch_monetization_types=flatrate');
         $data = json_decode($response->getBody()->getContents())->results;
