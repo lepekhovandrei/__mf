@@ -9,7 +9,7 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       env:
-        URL: https://github.com/lepekhovandrei/__app
+        URL: https://github.com/lepekhovandrei/__mf
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.NAME }}
