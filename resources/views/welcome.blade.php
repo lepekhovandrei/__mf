@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    2KN
+                    2K
                 </div>
 
                 <div class="links">
