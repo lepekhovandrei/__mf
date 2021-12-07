@@ -34,11 +34,39 @@ class FilmController extends Controller
     }
 
     public function films() {
-      $film = Film::orderBy('created_at', 'desc')->paginate(20);
+
+      $film = Film::where('genre', '!=', '16')->orderBy('created_at', 'desc')->paginate(20);
 
       return view('films', [
         'film' => $film,
       ]);
+    }
+
+    public function cartoons() {
+
+      // $film = Film::orderBy('created_at', 'desc')->paginate(20);
+      $film = Film::where('genre', '=', '16')->orderBy('created_at', 'desc')->paginate(20);
+
+      return view('cartoons', [
+        'film' => $film,
+      ]);
+
+
+    }
+
+    public function search(Request $request) {
+
+      $s = $request->s;
+
+      $film = Film::where('title', 'LIKE', "%{$s}%")->orderBy('title')->paginate(20);
+
+      // dd($film);
+
+      return view('search', [
+        'film' => $film,
+      ]);
+
+
     }
 
     public function create()

@@ -10,6 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <title>@yield('title')</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214547179-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-214547179-1');
+  </script>
 </head>
 <body>
   <div class="sidebar">
@@ -23,7 +32,13 @@
           </div>
         </div>
         <div class="search">
-          <form id="live-search" action="" class="styled" method="post">
+          <form action="{{ route('film.search') }}" method="get">
+            <input type="text" width="100%" id="s" name="s" placeholder="Поищи меня тут ;)">
+            <button type="submit">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="121.702px" height="122.881px" viewBox="0 0 121.702 122.881" enable-background="new 0 0 121.702 122.881" xml:space="preserve"><g><path d="M53.617,0c14.806,0,28.21,6.001,37.913,15.705c9.703,9.703,15.704,23.107,15.704,37.913 c0,10.832-3.213,20.914-8.737,29.346l23.205,25.291l-16.001,14.627L83.322,98.258c-8.503,5.67-18.718,8.977-29.705,8.977 c-14.806,0-28.21-6.002-37.913-15.705C6.001,81.826,0,68.422,0,53.617c0-14.806,6.001-28.21,15.704-37.913 C25.407,6.001,38.812,0,53.617,0L53.617,0z M87.3,19.934c-8.619-8.62-20.528-13.951-33.683-13.951s-25.063,5.332-33.683,13.951 c-8.62,8.62-13.952,20.529-13.952,33.683s5.332,25.063,13.952,33.682c8.62,8.621,20.528,13.951,33.683,13.951 S78.681,95.92,87.3,87.299c8.62-8.619,13.951-20.527,13.951-33.682S95.92,28.554,87.3,19.934L87.3,19.934z"/></g></svg>
+            </button>
+          </form>
+          {{-- <form id="live-search" action="" class="styled" method="post">
             <input type="text" id="filter" placeholder="Живой Поиск ;) " />
           </form>
           <nav>
@@ -35,10 +50,10 @@
                     </li>
                   @endforeach
               </ul>
-          </nav>
+          </nav> --}}
         </div>
         <ul class="mn">
-          <li><a href="/films">
+          <li><a href="{{ route('film.films') }}">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 83.06" style="enable-background:new 0 0 122.88 83.06" xml:space="preserve"><g><path d="M2.08,0H120.8h2.08v2.08v69.2v2.08h-2.08H77.57v4.55h16.61v5.15H28.55v-5.15h16.61v-4.55H2.08H0v-2.08V2.08V0H2.08L2.08,0 L2.08,0z M22.89,17.78h11.66v13.19h12.77V17.78h11.72v37.79H47.33V40.26H34.55v15.31H22.89V17.78L22.89,17.78z M65.2,17.78h17.36 c3.41,0,6.18,0.47,8.29,1.39c2.1,0.93,3.85,2.26,5.22,3.99c1.37,1.74,2.37,3.76,2.98,6.06c0.63,2.3,0.93,4.74,0.93,7.32 c0,4.04-0.46,7.17-1.38,9.39c-0.92,2.23-2.19,4.09-3.83,5.6c-1.64,1.5-3.39,2.51-5.26,3.01c-2.56,0.69-4.88,1.03-6.96,1.03H65.2 V17.78L65.2,17.78z M76.86,26.33v20.64h2.87c2.45,0,4.19-0.27,5.22-0.81c1.03-0.54,1.84-1.49,2.43-2.83 c0.59-1.35,0.88-3.54,0.88-6.56c0-4-0.65-6.74-1.96-8.22s-3.48-2.22-6.52-2.22H76.86L76.86,26.33z M118.73,4.15H4.15V69.2h114.57 V4.15H118.73L118.73,4.15z"/></g></svg>
             <span>Фильмы</span></a></li>
           <li style="pointer-events:none; opacity: .5"><a href="#">
@@ -47,7 +62,7 @@
               </g>
             </svg>
             <span>Сериалы</span></a></li>
-          <li style="pointer-events:none; opacity: .5"><a href="#">
+          <li><a href="{{ route('film.cartoons') }}">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 117.6" style="enable-background:new 0 0 122.88 117.6" xml:space="preserve">
               <style type="text/css">
               	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#21181C;}

@@ -11,10 +11,12 @@
         <div class="show_movie_original_title">Оригинальное название<h2>{{ $movieSingle->original_title }}</h2></div>
         <div class="show_movie_info_list">
           <div class="info_list">
-            <div class="info_list_item">
-              <div class="info_list_item_name">Слоган:</div>
-              <div class="info_list_item_value">{{ $movieSingle->tagline }}</div>
-            </div>
+            @if ($movieSingle->tagline)
+              <div class="info_list_item">
+                <div class="info_list_item_name">Слоган:</div>
+                <div class="info_list_item_value">{{ $movieSingle->tagline }}</div>
+              </div>
+            @endif
             <div class="info_list_item">
               <div class="info_list_item_name">Жанр:</div>
               <div class="info_list_item_value">{{ $movieSingle->genres[0]->name }}</div>
@@ -27,16 +29,21 @@
               <div class="info_list_item_name">Дата выхода:</div>
               <div class="info_list_item_value">{{ $movieSingle->release_date }}</div>
             </div>
-            <div class="info_list_item">
-              <div class="info_list_item_name">Бюджет:</div>
-              <div class="info_list_item_value">${{ $movieSingle->budget }}</div>
-            </div>
-            <div class="info_list_item">
-              <div class="info_list_item_name">Страница фильма:</div>
-              <div class="info_list_item_value">
-                <a target="_blank" href="{{ $movieSingle->homepage }}">Детальнее</a>
+            @if (!$movieSingle->budget == 0)
+              <div class="info_list_item">
+                <div class="info_list_item_name">Бюджет:</div>
+                <div class="info_list_item_value">${{ $movieSingle->budget }}</div>
               </div>
-            </div>
+            @endif
+
+            @if (!$movieSingle->homepage == '')
+              <div class="info_list_item">
+                <div class="info_list_item_name">Страница фильма:</div>
+                <div class="info_list_item_value">
+                  <a target="_blank" href="{{ $movieSingle->homepage }}">Детальнее</a>
+                </div>
+              </div>
+            @endif
           </div>
         </div>
         <div class="show_movie_description">

@@ -10,6 +10,12 @@ body {
   font-weight: 400;
 }
 
+h1 {
+  color: #212529;
+  line-height: 54px;
+  font-size: 30px;
+}
+
 .sidebar {
   width: 20%;
   height: 100vh;
@@ -24,7 +30,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .sidebar .logo {
   padding: 22px;
   text-decoration: none;
@@ -33,36 +38,28 @@ body {
   text-transform: uppercase;
   font-weight: 700;
 }
-
 .sidebar .logo span {
   color: yellow;
   font-weight: 700;
 }
-
 .sidebar .logo:hover {
   color: yellow;
 }
-
 .sidebar .logo:hover span {
   color: #e30813;
 }
-
 .sidebar nav ul {
   list-style: none;
 }
-
 .sidebar nav ul li {
   padding: 15px 22px;
 }
-
 .sidebar nav ul li:hover {
   background: #e30813;
 }
-
 .sidebar nav ul li:hover svg path {
   fill: #fff !important;
 }
-
 .sidebar nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -74,13 +71,11 @@ body {
   align-items: center;
   width: 100%;
 }
-
 .sidebar nav ul li a svg {
   width: 30px;
   height: 30px;
   margin: 0 10px 0 0;
 }
-
 .sidebar nav ul li a svg path {
   fill: #e30813;
 }
@@ -93,7 +88,25 @@ body {
   margin: 0 0 22px 0;
   padding: 22px;
 }
-
+.search form {
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+}
+.search form button {
+  background: transparent;
+  border: 0;
+  margin: 0 0 0 10px;
+  cursor: pointer;
+}
+.search form button:hover svg {
+  fill: #e30813;
+}
+.search form button svg {
+  fill: #fff;
+  width: 30px;
+  height: 30px;
+}
 .search input {
   width: 100%;
   height: 40px;
@@ -128,14 +141,13 @@ body {
   background: #212529;
   text-decoration: none;
 }
-
 .movie_title {
   padding: 10px;
   display: block;
   color: #fff;
   font-weight: 700;
   font-size: 18px;
-  height: 50px;
+  height: 80px;
   display: -ms-flex;
   display: flex;
   align-items: center;
@@ -143,27 +155,23 @@ body {
   overflow: hidden;
   text-align: center;
 }
-
 .movie_genre {
   display: block;
   color: #212529;
   margin-bottom: 15px;
   font-size: 14px;
 }
-
 .movie_poster {
   width: 100%;
   height: 350px;
   display: block;
 }
-
 .movie_poster img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 .movie_rait {
   position: absolute;
   top: 0;
@@ -177,27 +185,22 @@ body {
   display: flex;
   align-items: center;
 }
-
 .movie_rait svg {
   width: 15px;
   height: 15px;
   margin: 0 5px 0 0;
 }
-
 .movie_rait svg path {
   fill: #e30813;
 }
-
 .movie_description {
   position: absolute;
   top: 0;
   right: 0;
 }
-
 .movie_description .desc_text {
   display: none;
 }
-
 .movie_description .desc_icon {
   position: absolute;
   top: 0;
@@ -213,16 +216,13 @@ body {
   border-radius: 0 0 0 5px;
   cursor: pointer;
 }
-
 .movie_description .desc_icon img {
   width: 100%;
   height: 100%;
 }
-
 .movie_description:hover {
   background: red;
 }
-
 .movie_description:hover .desc_text {
   display: block;
   z-index: 2;
@@ -234,7 +234,6 @@ body {
   font-size: 14px;
   line-height: 22px;
 }
-
 .movie_description:hover .desc_text .movie_title {
   margin-bottom: 10px;
   display: block !important;
@@ -253,7 +252,7 @@ body {
 
 .show_content {
   display: grid;
-  grid-template-columns: 1fr 700px;
+  grid-template-columns: 1fr 500px;
   align-items: start;
   grid-gap: 50px;
 }
@@ -265,17 +264,16 @@ body {
      object-fit: contain;
 }
 
-.show_movie_title {
+.show_movie_title h1 {
   color: #fff;
   line-height: 54px;
-  font-size: 30px;
+  font-size: 60px;
 }
 
 .show_movie_original_title {
   font-size: 14px;
   margin: 10px 0;
 }
-
 .show_movie_original_title h2 {
   color: yellow;
 }
@@ -287,12 +285,10 @@ body {
   margin: 22px 0;
   font-size: 22px;
 }
-
 .info_list_item_value {
   color: yellow;
   font-weight: 700;
 }
-
 .info_list_item_value a {
   color: #fff;
 }
@@ -304,7 +300,6 @@ body {
   margin: 22px 0;
   list-style: none;
 }
-
 .pagination .page-item {
   margin: 0 10px;
   background: #212529;
@@ -315,17 +310,14 @@ body {
   width: 40px;
   height: 40px;
 }
-
 .pagination .page-item.disabled {
   display: none;
 }
-
 .pagination .page-item.active {
   color: yellow;
   font-size: 20px;
   font-weight: 700;
 }
-
 .pagination .page-item a {
   color: #fff;
   text-decoration: none;
@@ -345,7 +337,6 @@ body {
   padding: 22px;
   margin: 22px 0 0 0;
 }
-
 .player #yohoho {
   width: 100% !important;
   height: 100% !important;
@@ -355,7 +346,6 @@ body {
   padding: 0 !important;
   margin: 10px 0;
 }
-
 .liveSearchBar li a img {
   width: 30px;
   margin-right: 10px;
@@ -387,7 +377,7 @@ body {
   }
 
   .show_content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 400px;
   }
 
   .show_movie_original_title {
@@ -400,10 +390,15 @@ body {
     margin: 15px 0;
   }
 }
-
 @media (max-width: 1200px) {
   body {
     padding-top: 60px;
+  }
+
+  .show_movie_title h1 {
+    color: #fff;
+    line-height: 30px;
+    font-size: 30px;
   }
 
   .sidebar {
@@ -414,32 +409,26 @@ body {
     align-items: center;
     height: auto;
   }
-
   .sidebar .logo {
     padding: 0;
     font-size: 30px;
   }
-
   .sidebar nav {
     display: -ms-flex;
     display: flex;
     align-items: center;
   }
-
   .sidebar nav ul {
     display: -ms-flex;
     display: flex;
   }
-
   .sidebar nav ul li {
     padding: 0 22px;
   }
-
   .sidebar nav ul li a svg {
     text-align: center;
     margin: 0 auto;
   }
-
   .sidebar nav ul li a span {
     display: none;
   }
@@ -457,14 +446,12 @@ body {
     text-align: center;
     cursor: pointer;
   }
-
   .burg span {
     display: block;
     width: 40px;
     height: 2px;
     background: #fff;
   }
-
   .burg span:nth-child(2) {
     margin: 8px 0;
   }
@@ -508,19 +495,16 @@ body {
     background: #212529;
     max-width: 500px;
   }
-
   .liveSearchBar li {
     padding: 5px 22px !important;
   }
 }
-
 @media (max-width: 767px) {
   .pagination {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 5px;
   }
-
   .pagination .page-item {
     margin: 0;
   }
@@ -540,7 +524,6 @@ body {
   .sidebar {
     padding: 10px;
   }
-
   .sidebar nav ul.mn {
     display: none;
   }
@@ -556,12 +539,10 @@ body {
   .movie_poster {
     height: 222px;
   }
-
   .movie_title {
     font-size: 14px;
     line-height: 14px;
   }
-
   .movie_description:hover .desc_text {
     padding: 10px;
   }
@@ -571,7 +552,6 @@ body {
     margin: 0 0 5px 0;
   }
 }
-
 @media (max-width: 350px) {
   .grid {
     grid-template-columns: 1fr;
@@ -581,4 +561,3 @@ body {
     height: auto;
   }
 }
-

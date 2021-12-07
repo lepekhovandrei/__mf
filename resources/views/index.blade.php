@@ -4,11 +4,10 @@
 @endsection
 @section('content')
   <div class="content_2">
-    {{-- <video id="yohoho" data-kinopoisk="401522" controls>
-    <source src="//yohoho.cc/yo.mp4" type="video/mp4">
-    </video>
-    <script src="//yohoho.cc/yo.js"></script> --}}
-    <div class="heading">Последние добавленые фильмы</div>
+
+
+
+    <div class="heading"><h1>Последние поступления</h1></div>
     <div class="grid">
       @foreach ($film as $f)
         <a href="{{ route('film.show', $f->id_tmdb_film) }}" class="movie">
